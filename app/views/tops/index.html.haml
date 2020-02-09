@@ -6,10 +6,10 @@
 
 
 
--# - @lists.each do |list|
--#   - list.stations.each do |station|
--#     - list.images.each do |image|
--#       = list.name
--#       = list.street
--#       = station.station
--#       = image_tag image.image_sub, height: '150px', width: '220px'
+- @lists.each do |list|
+  - list.stations.each do |station|
+    - list.images.each do |image|
+      = list.name
+      = list.street
+      = station.station
+      = image_tag image.image_sub, height: '150px', width: '220px'
