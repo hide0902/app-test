@@ -1,0 +1,15 @@
+= search_form_for @search, url: root_path do |f|
+  = f.label :name_cont, "keyword"
+  = f.search_field :name_cont
+  = f.submit "検索"
+
+
+
+
+-# - @lists.each do |list|
+-#   - list.stations.each do |station|
+-#     - list.images.each do |image|
+-#       = list.name
+-#       = list.street
+-#       = station.station
+-#       = image_tag image.image_sub, height: '150px', width: '220px'
