@@ -1,0 +1,7 @@
+- @lists.each do |list|
+  = list.name
+  = list.street
+  = list.rent
+  = list.stations[0].station
+  = image_tag list.images[0].image_sub, height: '150px', width: '220px'
+  = link_to '詳細を見る', "/lists/#{list.id}", method: :get

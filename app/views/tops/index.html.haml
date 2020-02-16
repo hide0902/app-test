@@ -1,5 +1,5 @@
 .main
-  = search_form_for @search, url: root_path do |f|
+  = search_form_for @search, url: lists_path do |f|
     .main__1
       = f.label :name_cont, "keyword"
       = f.search_field :name_cont
@@ -8,16 +8,22 @@
       %p ~
       = f.search_field :rent_lteq, placeholder: "¥ Min"
     .main__3
+      = f.radio_button :street_eq, '', {:checked => true}
+      指定なし
+      = f.radio_button :street_eq, '大阪市'
+      大阪市
+      = f.radio_button :street_eq, '堺市'
+      堺市
+    .main__4
+      = f.select :age_lteq, [ ["新築",0], ["1年以内",1], ["3年以内",3], ["5年以内",5], ["7年以内",7], ["10年以内",10], ["15年以内",15], ["20年以内",20], ["25年以内",25], ["30年以内",30] ], :include_blank => '指定なし'
+    .main__5
+      = f.checkboxes :plan_eq, [["ワンルーム","ワンルーム"], ["1K","1K"], ["1DK","1DK"], ["1LDK","1LDK"], ["2K","2K"]]
+    .main__sub
       = f.submit "検索"
 
-
-
-
-- @lists.each do |list|
-  - list.stations.each do |station|
-    - list.images.each do |image|
-      = list.name
-      = list.street
-      = list.rent
-      = station.station
-      = image_tag image.image_sub, height: '150px', width: '220px'
+-# - @lists.each do |list|
+-#   = list.name
+-#   = list.street
+-#   = list.rent
+-#   = list.stations[0].station
+-#   = image_tag list.images[0].image_sub, height: '150px', width: '220px'
